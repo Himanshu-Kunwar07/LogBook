@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import postRoutes from './routes/posts.js'
+import userRoutes from './routes/users.js'
 
 const app = express();
 dotenv.config();
@@ -16,6 +17,7 @@ app.use(cors());
 
 console.log('connection', process.env.CONNECTION_URL);
 app.use('/posts', postRoutes);
+app.use('/user', userRoutes);
 // const CONNECTION_URL = 'mongodb+srv://HimanshuMastery:Kunwar123@cluster0.6sfojen.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const PORT  =  5000;
 const CONNECTION_URL = process.env.CONNECTION_URL;
